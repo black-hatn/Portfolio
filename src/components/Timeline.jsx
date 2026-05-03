@@ -1,260 +1,134 @@
-import { useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { timeline } from "../data";
-import { motion, useScroll, useSpring } from "framer-motion";
-
-const Icon = ({ type }) => {
-  switch (type) {
-    case "education":
-      return <i className="bi bi-mortarboard-fill"></i>;
-    case "formation":
-      return <i className="bi bi-code-square"></i>;
-    default:
-      return <i className="bi bi-star-fill"></i>;
-  }
-};
-
-function TimelineItem({ item, index }) {
-  return (
-    <div style={{
-      display: "flex",
-      gap: "2rem",
-      position: "relative",
-      paddingBottom: "4rem",
-    }}>
-      {/* Date / Year Side */}
-      <div style={{
-        flex: "0 0 100px",
-        textAlign: "right",
-        paddingTop: "0.25rem"
-      }}>
-        <motion.span
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.1 }}
-          style={{
-            fontSize: "0.9rem",
-            fontWeight: 800,
-            color: "var(--accent)",
-            fontFamily: "var(--font-display)",
-            letterSpacing: "0.05em",
-            display: "block"
-          }}
-        >
-          {item.year}
-        </motion.span>
-      </div>
-
-      {/* Central Point */}
-      <div style={{ 
-        position: "relative",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center"
-      }}>
-        <motion.div
-          initial={{ scale: 0 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ 
-            type: "spring", 
-            stiffness: 260, 
-            damping: 20, 
-            delay: index * 0.1 
-          }}
-          style={{
-            width: "40px",
-            height: "40px",
-            background: "var(--bg3)",
-            border: "2px solid var(--accent)",
-            borderRadius: "50%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: "var(--accent)",
-            fontSize: "1.1rem",
-            zIndex: 2,
-            boxShadow: "0 0 20px var(--border)",
-            backdropFilter: "blur(10px)"
-          }}
-        >
-          <Icon type={item.type} />
-        </motion.div>
-      </div>
-
-      {/* Content Card */}
-      <motion.div
-        initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: index * 0.15 }}
-        style={{
-          flex: 1,
-          background: "var(--bg2)",
-          border: "1px solid var(--border)",
-          borderRadius: "20px",
-          padding: "1.75rem",
-          backdropFilter: "blur(12px)",
-          position: "relative",
-          boxShadow: "0 10px 30px -15px rgba(0, 0, 0, 0.1)",
-          transition: "border-color 0.3s, transform 0.3s"
-        }}
-        className="timeline-card"
-      >
-        <h3 style={{
-          fontFamily: "var(--font-display)",
-          fontWeight: 700,
-          fontSize: "1.25rem",
-          marginBottom: "0.5rem",
-          color: "var(--text)"
-        }}>{item.title}</h3>
-        
-        <p style={{
-          fontSize: "0.9rem",
-          color: "var(--accent)",
-          fontWeight: 600,
-          marginBottom: "1rem",
-          display: "flex",
-          alignItems: "center",
-          gap: "0.5rem"
-        }}>
-          <i className="bi bi-geo-alt-fill"></i> {item.place}
-        </p>
-
-        {item.desc && (
-          <p style={{
-            color: "var(--muted)",
-            fontSize: "0.95rem",
-            lineHeight: 1.7,
-            margin: 0
-          }}>
-            {item.desc}
-          </p>
-        )}
-      </motion.div>
-    </div>
-  );
-}
+import { motion as Motion } from "framer-motion";
 
 export default function Timeline() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
-
-  const scaleY = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const { t } = useTranslation();
 
   return (
-    <section id="timeline" style={{ 
-      padding: "8rem 2rem", 
-      background: "var(--bg1)",
-      position: "relative",
-      overflow: "hidden"
-    }}>
-      {/* Decorative Background Element */}
-      <div style={{
-        position: "absolute",
-        top: "20%",
-        right: "-10%",
-        width: "40vw",
-        height: "40vw",
-        background: "radial-gradient(circle, rgba(168, 85, 247, 0.05) 0%, transparent 70%)",
-        borderRadius: "50%",
-        filter: "blur(80px)",
-        pointerEvents: "none"
-      }} />
+    <section id="experience" className="timeline-sect">
+      <div className="section-head">
+        <h2>
+          {t("timeline.title")} <span className="text-accent">{t("timeline.exp")}</span>
+        </h2>
+        <span className="section-watermark">{t("timeline.watermark")}</span>
+      </div>
 
-      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-        <header style={{ marginBottom: "5rem" }}>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            style={{ 
-              color: "var(--accent)", 
-              fontSize: "0.8rem", 
-              letterSpacing: "0.3rem", 
-              marginBottom: "1rem", 
-              fontFamily: "var(--font-display)", 
-              fontWeight: 800,
-              textTransform: "uppercase" 
-            }}
-          >
-            04 — PARCOURS
-          </motion.p>
-          <motion.h2
+      <div className="timeline-container">
+        {timeline.map((item, i) => (
+          <Motion.div
+            key={item.key}
+            className="timeline-item"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 800,
-              fontSize: "clamp(2.5rem, 5vw, 4rem)",
-              letterSpacing: "-0.04em",
-              lineHeight: 1.1,
-              color: "var(--text)"
-            }}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
           >
-            Expérience & <span style={{ opacity: 0.3 }}>Éducation</span>
-          </motion.h2>
-        </header>
-
-        <div ref={containerRef} style={{ position: "relative" }}>
-          {/* Animated Progress Line */}
-          <div style={{
-            position: "absolute",
-            left: "119px", // Aligned with the center of the points (100px + 2rem/2 + adjust)
-            // Centering math: Side (100px) + Gap (2rem = 32px) + Dot (40px)
-            // Point center is at 100 + 32 + 20 = 152px
-            // Wait, let's just use flex layout for points and position the line absolutely relative to the grid
-          }} />
-          
-          {/* Simpler absolute positioned line for centering accuracy */}
-          <div style={{
-            position: "absolute",
-            left: "151px", // (100px width + 32px gap + 40px/2 point) - 1px width/2
-            top: "20px",
-            bottom: "40px",
-            width: "2px",
-            background: "var(--border)",
-            borderRadius: "10px"
-          }}>
-            <motion.div
-              style={{
-                width: "100%",
-                height: "100%",
-                background: "var(--accent)",
-                scaleY,
-                originY: 0,
-                boxShadow: "0 0 15px var(--accent)"
-              }}
-            />
-          </div>
-
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            {timeline.map((item, i) => (
-              <TimelineItem key={i} item={item} index={i} />
-            ))}
-          </div>
-        </div>
+            <div className="timeline-icon">
+              <i className={`bi ${item.type === "education" ? "bi-mortarboard-fill" : "bi-briefcase-fill"}`} />
+            </div>
+            <div className="timeline-content">
+              <span className="timeline-date">{item.year}</span>
+              <h4 className="timeline-h4">
+                {t(`timeline.items.${item.key}.title`)}
+                <span className="timeline-place"> - {t(`timeline.items.${item.key}.place`)}</span>
+              </h4>
+              <p className="timeline-p">{t(`timeline.items.${item.key}.desc`)}</p>
+            </div>
+          </Motion.div>
+        ))}
       </div>
 
       <style>{`
-        .timeline-card:hover {
-          border-color: var(--accent) !important;
-          transform: translateX(5px);
-          background: var(--bg3) !important;
+        .timeline-sect {
+          max-width: var(--max);
+          margin: 0 auto;
+          padding: 4rem 1.5rem 6rem;
         }
+        .timeline-container {
+          position: relative;
+          max-width: 800px;
+          margin: 0 auto;
+          padding-left: 2rem;
+          border-left: 2px solid var(--border);
+        }
+        [dir="rtl"] .timeline-container {
+          padding-left: 0;
+          padding-right: 2rem;
+          border-left: none;
+          border-right: 2px solid var(--border);
+        }
+
+        .timeline-item {
+          position: relative;
+          margin-bottom: 3.5rem;
+        }
+        .timeline-item:last-child {
+          margin-bottom: 0;
+        }
+
+        .timeline-icon {
+          position: absolute;
+          left: calc(-2rem - 21px);
+          top: 0;
+          width: 42px;
+          height: 42px;
+          background: var(--accent);
+          color: #fff;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.1rem;
+          z-index: 2;
+          box-shadow: 0 0 0 8px var(--bg);
+        }
+        [dir="rtl"] .timeline-icon {
+          left: auto;
+          right: calc(-2rem - 21px);
+        }
+
+        .timeline-date {
+          display: inline-block;
+          background: var(--bg3);
+          padding: 0.35rem 1rem;
+          border-radius: var(--radius-pill);
+          font-size: 0.8rem;
+          font-weight: 700;
+          color: var(--text);
+          margin-bottom: 1rem;
+          letter-spacing: 0.02em;
+          white-space: nowrap;
+          border: 1px solid var(--border);
+        }
+
+        .timeline-h4 {
+          font-family: var(--font-display);
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 0.75rem;
+          color: var(--text);
+        }
+        .timeline-place {
+          font-weight: 400;
+          color: var(--muted);
+          font-size: 0.95rem;
+          opacity: 0.8;
+        }
+        .timeline-p {
+          font-size: 0.95rem;
+          color: var(--muted2);
+          line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
-          #timeline { padding: 4rem 1rem !important; }
-          .timeline-card { padding: 1.25rem !important; }
-          /* Mobile layout adjustments could be added here if needed, 
-             e.g., hiding the year side and moving year inside card */
+          .timeline-container {
+            margin-left: 1rem;
+          }
+          [dir="rtl"] .timeline-container {
+            margin-left: 0;
+            margin-right: 1rem;
+          }
         }
       `}</style>
     </section>

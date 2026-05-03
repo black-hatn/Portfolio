@@ -1,0 +1,124 @@
+.skills-block {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.25rem 4rem;
+}
+.sep {
+  border: none;
+  border-top: 1px solid var(--border);
+  max-width: 40%;
+  margin: 0 auto 3rem;
+}
+.skills-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2.25rem;
+  color: var(--text);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem 1.25rem;
+  max-width: 920px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem 1rem;
+    max-width: 520px;
+  }
+}
+
+@media (max-width: 380px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+}
+
+.skill-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  min-width: 0;
+}
+
+.skills-grid .skill-ring {
+  width: 128px;
+  height: 128px;
+}
+.skills-grid .skill-ring-inner {
+  width: 92px;
+  height: 92px;
+  font-size: 1.05rem;
+}
+
+.skill-name {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 0.85rem;
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  color: var(--text);
+  max-width: 11rem;
+  hyphens: auto;
+}
+
+@media (min-width: 901px) {
+  .skill-name {
+    font-size: 0.78rem;
+  }
+}
+
+.skills-list-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 5rem;
+}
+.skill-cat-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  padding: 2rem;
+  border-radius: var(--radius);
+  transition: border-color 0.25s ease;
+}
+.skill-cat-card:hover {
+  border-color: var(--accent);
+}
+.skill-cat-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0;
+}
+.skill-tag {
+  background: var(--bg3);
+  color: var(--text);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}

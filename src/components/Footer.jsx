@@ -1,31 +1,34 @@
+import { useTranslation } from "react-i18next";
 import { info } from "../data";
 
 export default function Footer() {
+  const { t } = useTranslation();
+
   return (
-    <footer style={{
-      borderTop: "1px solid var(--border)",
-      padding: "2rem",
-      display: "flex", justifyContent: "space-between", alignItems: "center",
-      flexWrap: "wrap", gap: "1rem",
-      maxWidth: "var(--max)", margin: "0 auto",
-    }}>
-      <span style={{ color: "var(--muted)", fontSize: "0.85rem" }}>
-        © {new Date().getFullYear()} {info.name}
-      </span>
-      <div style={{ display: "flex", gap: "1.5rem" }}>
-        {[
-          { label: "GitHub", href: info.github },
-          { label: "LinkedIn", href: info.linkedin },
-          { label: "Email", href: `mailto:${info.email}` },
-        ].map(s => (
-          <a key={s.label} href={s.href} target="_blank" rel="noreferrer" style={{
-            fontSize: "0.85rem", color: "var(--muted)", transition: "color 0.2s",
-          }}
-            onMouseEnter={e => e.target.style.color = "var(--text)"}
-            onMouseLeave={e => e.target.style.color = "var(--muted)"}
-          >{s.label}</a>
-        ))}
+    <footer className="footer">
+      <div className="footer-inner">
+        <p>
+          © {new Date().getFullYear()} <strong>{info.firstName} {info.lastName}</strong>. {t("footer.rights")}
+        </p>
       </div>
+      
+      <style>{`
+        .footer {
+          padding: 2.5rem 1.5rem;
+          background: var(--bg2);
+          border-top: 1px solid var(--border);
+          padding: 2rem 1.25rem;
+          background: var(--bg);
+        }
+        .footer-inner {
+          max-width: var(--max);
+          margin: 0 auto;
+          text-align: center;
+          font-family: var(--font-body);
+          font-size: 0.875rem;
+          color: var(--muted);
+        }
+      `}</style>
     </footer>
   );
 }

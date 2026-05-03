@@ -1,13 +1,37 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 
-export default function Typewriter({ words, delay = 100 }) {
+const reducedMotionQuery = "(prefers-reduced-motion: reduce)";
+
+function subscribeReducedMotion(onChange) {
+  const mq = window.matchMedia(reducedMotionQuery);
+  mq.addEventListener("change", onChange);
+  return () => mq.removeEventListener("change", onChange);
+}
+
+function getReducedMotion() {
+  return window.matchMedia(reducedMotionQuery).matches;
+}
+
+function getReducedMotionServerSnapshot() {
+  return false;
+}
+
+export default function Typewriter({ words, delay = 100, cursor = false }) {
+  const reducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    getReducedMotion,
+    getReducedMotionServerSnapshot
+  );
+
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(delay);
 
   useEffect(() => {
-    let timer = setTimeout(() => {
+    if (reducedMotion) return;
+
+    const timer = setTimeout(() => {
       const i = loopNum % words.length;
       const fullText = words[i];
 
@@ -20,17 +44,30 @@ export default function Typewriter({ words, delay = 100 }) {
       }
 
       if (!isDeleting && text === fullText) {
-        setTypingSpeed(2500); // pause at end
+        setTypingSpeed(2500);
         setIsDeleting(true);
-      } else if (isDeleting && text === '') {
+      } else if (isDeleting && text === "") {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
-        setTypingSpeed(500); // pause before start next word
+        setTypingSpeed(500);
       }
     }, typingSpeed);
 
     return () => clearTimeout(timer);
-  }, [text, isDeleting, loopNum, typingSpeed, words, delay]);
+  }, [text, isDeleting, loopNum, typingSpeed, words, delay, reducedMotion]);
 
-  return <span>{text}</span>;
+  if (reducedMotion) {
+    return (
+      <span className="typewriter-inline">
+        {words.join(" · ")}
+      </span>
+    );
+  }
+
+  return (
+    <span className="typewriter-inline">
+      {text}
+      {cursor && <span className="typewriter-caret">|</span>}
+    </span>
+  );
 }

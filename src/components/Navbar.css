@@ -1,0 +1,288 @@
+/* ============================================
+   NAVBAR STYLES - Extracted from Navbar.jsx
+   ============================================ */
+
+/* Top utilities bar (theme toggle + language) */
+.top-utilities {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  padding: 6px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border);
+}
+
+[data-theme="light"] .top-utilities {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.top-utilities.top-rtl {
+  right: auto;
+  left: 32px;
+}
+
+/* Settings button */
+.settings-btn {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1.15rem;
+  transition: all 0.3s ease;
+}
+
+.settings-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.settings-gear {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.settings-btn:hover .settings-gear {
+  transform: rotate(90deg);
+}
+
+/* Side navigation header */
+.side-header {
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  transition: opacity 0.35s ease, transform 0.35s ease, left 0.35s ease, right 0.35s ease;
+}
+
+.side-header.side-rtl {
+  right: auto;
+  left: 30px;
+}
+
+.side-nav-desktop {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* Side navigation links */
+.side-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(30, 30, 30, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+  transition: color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+[data-theme="light"] .side-link {
+  background: rgba(255, 255, 255, 0.6);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.side-link:hover,
+.side-link.active {
+  color: #fff;
+  background: var(--accent);
+}
+
+/* Side link label (appears on hover) */
+.side-label {
+  position: absolute;
+  right: -8px;
+  pointer-events: none;
+  opacity: 0;
+  white-space: nowrap;
+  padding: 0 1rem 0 1.25rem;
+  height: 50px;
+  line-height: 50px;
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--accent);
+  border-radius: 30px 0 0 30px;
+  transition: opacity 0.25s ease, right 0.25s ease, left 0.25s ease;
+  z-index: -1;
+}
+
+.side-header.side-rtl .side-label {
+  right: auto;
+  left: -8px;
+  border-radius: 0 30px 30px 0;
+  padding: 0 1.25rem 0 1rem;
+}
+
+.side-link:hover .side-label,
+.side-link.active .side-label {
+  opacity: 1;
+  right: 40px;
+}
+
+.side-header.side-rtl .side-link:hover .side-label,
+.side-header.side-rtl .side-link.active .side-label {
+  right: auto;
+  left: 40px;
+}
+
+/* Mobile navigation */
+.mobile-nav-wrap {
+  display: none;
+}
+
+.mobile-extra {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Menu toggle button */
+.menu-toggle {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: 70;
+}
+
+[dir="rtl"] .menu-toggle {
+  right: auto;
+  left: 24px;
+}
+
+.menu-burger {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 54px;
+  height: 54px;
+  padding: 14px 12px;
+  border-radius: 5px;
+  background: var(--bg3);
+  cursor: pointer;
+}
+
+.menu-burger span {
+  display: block;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Burger animation when open */
+.menu-toggle.open .menu-burger span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.menu-toggle.open .menu-burger span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .menu-burger span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile panel */
+.mobile-panel {
+  position: fixed;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(16px);
+  padding: 5rem 1.5rem 2rem;
+  list-style: none;
+  margin: 0;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  z-index: 55;
+  overflow-y: auto;
+}
+
+[data-theme="light"] .mobile-panel {
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.mobile-panel.visible {
+  transform: translateX(0);
+}
+
+/* Mobile menu items */
+.mobile-panel li a,
+.mobile-theme {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--text);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  width: 100%;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.mobile-panel li a.active {
+  color: var(--accent);
+}
+
+.mobile-panel li a i {
+  color: var(--accent);
+  font-size: 1.2rem;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+@media (max-width: 991px) {
+  .side-header {
+    right: auto;
+    left: auto;
+    top: 0;
+    transform: none;
+    width: 100%;
+    height: 0;
+  }
+
+  .side-nav-desktop {
+    display: none !important;
+  }
+
+  .mobile-nav-wrap {
+    display: block;
+  }
+
+  .top-utilities {
+    display: none;
+  }
+}

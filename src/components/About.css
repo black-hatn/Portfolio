@@ -1,0 +1,120 @@
+.about {
+  padding-bottom: 2rem;
+}
+.about-wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 1.25rem 3rem;
+}
+.about-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+}
+.about-col {
+  flex: 1 1 320px;
+}
+.about-h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+}
+.about-grid-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  margin: 0;
+}
+.about-col-half {
+  flex: 1 1 200px;
+}
+.info-row {
+  padding-bottom: 1.1rem;
+}
+.info-k {
+  opacity: 0.8;
+  margin-right: 0.35rem;
+  display: inline;
+}
+.info-v {
+  font-weight: 600;
+  display: inline;
+  margin-left: 0;
+}
+.about-cv {
+  margin-top: 1.75rem;
+}
+.stats-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -0.5rem;
+}
+.stat-box {
+  width: 50%;
+  padding: 0 0.5rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1rem 1.5rem 1.5rem;
+}
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+  position: relative;
+  display: inline-block;
+}
+.stat-num.has-plus::after {
+  content: "+";
+  position: absolute;
+  right: -1.35rem;
+  top: 0.15rem;
+  font-size: 1.6rem;
+  font-weight: 300;
+  color: var(--accent);
+}
+.stat-cap {
+  position: relative;
+  padding-left: 2.75rem;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 1.35;
+}
+.stat-cap::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 30px;
+  height: 2px;
+  background: var(--bg4);
+}
+.about-bio {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted2);
+  line-height: 1.85;
+  text-align: justify;
+  font-size: 0.95rem;
+}
+@media (max-width: 575px) {
+  .stat-cap {
+    padding-left: 0;
+  }
+  .stat-cap::before {
+    display: none;
+  }
+}

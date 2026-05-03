@@ -1,0 +1,187 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "toggle_theme_light": "Mode clair",
+    "toggle_theme_dark": "Mode sombre"
+  },
+  "info": {
+    "title": "Étudiant en L2 Informatique",
+    "age": "20 ans",
+    "nationality": "Tchadien",
+    "freelance": "Disponible (stage / projets)",
+    "location": "N'Djamena, Tchad",
+    "languages": "Français, Anglais, Arabe",
+    "heroLead": "Étudiant en L2 informatique — développement web, cybersécurité et projets concrets.",
+    "about": "Je suis étudiant en informatique passionné par la création d'applications web modernes et performantes et de la cybersécurité. J'aime résoudre des problèmes complexes et apprendre constamment de nouvelles technologies.",
+    "home_paragraphs": [
+      "La cybersécurité fait partie de mon parcours : sensibilisation aux bonnes pratiques, curiosité pour l'analyse et la veille. Ce site regroupe mon profil, mes compétences et des projets que je suis fier de présenter.",
+      "Je suis ouvert aux échanges autour d'un stage, d'un projet étudiant ou d'une collaboration — parcourez les pages « À propos », « Portfolio » et « Contact » pour en savoir plus."
+    ],
+    "highlights": {
+      "dev": "Front & back (React, PHP, JS)",
+      "cyber": "Cybersécurité & Ethical Hacking",
+      "projects": "Projets web & base de données"
+    }
+  },
+  "hero": {
+    "iam": "Je suis ",
+    "roles": ["Développeur Web", "Passionné de cybersécurité", "Étudiant en informatique"],
+    "cta": "À propos de moi"
+  },
+  "about": {
+    "title": "À PROPOS DE ",
+    "me": "MOI",
+    "watermark": "présentation",
+    "intro": "Cette page regroupe mes informations personnelles, mes compétences techniques et mon parcours scolaire.",
+    "personal_info": "Infos personnelles",
+    "f_name": "Prénom",
+    "l_name": "Nom",
+    "age_label": "Âge",
+    "nationality_label": "Nationalité",
+    "freelance_label": "Disponibilité",
+    "address_label": "Adresse",
+    "phone_label": "Téléphone",
+    "email_label": "Email",
+    "lang_label": "Langues",
+    "cv_btn": "Télécharger mon CV",
+    "stats": {
+      "years": "Années d'études sup.",
+      "projects": "Projets réalisés",
+      "certs": "Formations certifiantes",
+      "motivation": "Motivation"
+    }
+  },
+  "cyber": {
+    "title": "Focus Cybersécurité",
+    "certs_title": "Certifications",
+    "lab_status": "État du Laboratoire",
+    "note": "En veille constante sur les nouvelles vulnérabilités (CVE) et techniques d'attaque.",
+    "badges": {
+      "networking": "Networking",
+      "linux": "Linux",
+      "web_hacking": "Web Hacking",
+      "osint": "OSINT"
+    }
+  },
+  "skills": {
+    "title": "Mes compétences",
+    "levels": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Bases de données",
+      "cyber": "Cybersécurité",
+      "tools": "Git & outils",
+      "php": "PHP / Web",
+      "python": "Python",
+      "linux": "Linux"
+    },
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Bases de données",
+      "tools": "Outils & DevOps",
+      "cyber": "Cybersécurité"
+    }
+  },
+  "portfolio": {
+    "title": "MON ",
+    "work": "PORTFOLIO",
+    "watermark": "réalisations",
+    "intro": "Projets réalisés : applications web, exercices et réalisations récentes.",
+    "projects": {
+      "sportmates": {
+        "title": "Sportmates",
+        "desc": "Plateforme communautaire sportive avec tableau de bord administrateur (gestion des utilisateurs, publications et statistiques en temps réel).",
+        "overlay": "COMMUNAUTÉ SPORTIVE",
+        "cat": "Web"
+      },
+      "ecommerce": {
+        "title": "Projet E-commerce",
+        "desc": "Application web de vente en ligne avec panier, authentification et paiement. Projet réalisé en équipe de 3 personnes.",
+        "overlay": "E-COMMERCE",
+        "cat": "Web"
+      },
+      "weather": {
+        "title": "Application Météo",
+        "desc": "App météo utilisant l'API OpenWeatherMap avec géolocalisation et prévisions sur 7 jours.",
+        "overlay": "API & JS",
+        "cat": "Web"
+      },
+      "todo": {
+        "title": "Gestionnaire de tâches",
+        "desc": "Application de gestion de tâches avec drag & drop, catégories et synchronisation locale.",
+        "overlay": "REACT",
+        "cat": "Web"
+      },
+      "sort": {
+        "title": "Algorithmes de tri",
+        "desc": "Visualisateur d'algorithmes de tri (bubble sort, quicksort, merge sort) avec animations.",
+        "overlay": "ALGORITHME",
+        "cat": "Outils"
+      }
+    }
+  },
+  "timeline": {
+    "title": "ÉDUCATION & ",
+    "exp": "EXPÉRIENCE",
+    "watermark": "parcours",
+    "items": {
+      "l2": {
+        "title": "Licence 2 Informatique",
+        "place": "ENASTIC N'Djamena",
+        "desc": "Approfondissement en développement logiciel, réseaux et sécurité."
+      },
+      "cyber_f": {
+        "title": "Formation en Cybersécurité",
+        "place": "Mahrasoft Innovation",
+        "desc": "Introduction aux fondamentaux de la sécurité offensive et défensive."
+      },
+      "web_f": {
+        "title": "Formation en Développement Web",
+        "place": "Mahrasoft Innovation",
+        "desc": "Projets web et bonnes pratiques front/back."
+      },
+      "l1": {
+        "title": "Licence 1 Informatique",
+        "place": "ENASTIC N'Djamena",
+        "desc": "Fondamentaux de la programmation et des systèmes."
+      },
+      "bac": {
+        "title": "Baccalauréat Scientifique série D",
+        "place": "Lycée Les Faucons",
+        "desc": ""
+      }
+    }
+  },
+  "contact": {
+    "title": "PRENDRE ",
+    "touch": "CONTACT",
+    "watermark": "contact",
+    "intro": "Pour un stage, un projet ou une question — laissez-moi un message.",
+    "sub": "Ne soyez pas timide !",
+    "lead": "N'hésitez pas à me contacter. Je suis ouvert aux échanges sur des projets, des idées ou des opportunités de stage et de collaboration.",
+    "email_me": "M'envoyer un e-mail",
+    "call_me": "M'appeler",
+    "form": {
+      "name": "VOTRE NOM",
+      "email": "VOTRE EMAIL",
+      "subject": "L'OBJET",
+      "message": "VOTRE MESSAGE",
+      "send": "Envoyer",
+      "sending": "Envoi...",
+      "success": "Message envoyé. Merci !",
+      "error": "L'envoi a échoué. Réessayez plus tard."
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés."
+  },
+  "notfound": {
+    "title": "Page introuvable",
+    "desc": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "back": "Retour à l'accueil"
+  }
+}

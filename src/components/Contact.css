@@ -1,0 +1,27 @@
+.contact-sect { padding-bottom: 5rem; }
+        .contact-wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+        .contact-row { display: flex; gap: 4rem; }
+        .contact-col { flex: 1; }
+        .contact-h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 1.5rem; text-transform: uppercase; }
+        .contact-lead { color: var(--muted); margin-bottom: 2.5rem; line-height: 1.7; }
+        .contact-details { list-style: none; padding: 0; margin-bottom: 2.5rem; }
+        .contact-details li { display: flex; gap: 1.25rem; margin-bottom: 1.5rem; align-items: center; }
+        .contact-details .icon { width: 50px; height: 50px; background: var(--bg3); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--accent); font-size: 1.25rem; }
+        .contact-details .txt span { display: block; font-size: 0.8rem; color: var(--muted); text-transform: uppercase; }
+        .contact-details .txt strong { font-size: 1rem; color: var(--text); }
+        .contact-social { display: flex; gap: 1rem; }
+        .contact-social a { width: 40px; height: 40px; background: var(--bg3); border-radius: 5px; display: flex; align-items: center; justify-content: center; color: var(--text); transition: all 0.2s ease; }
+        .contact-social a:hover { background: var(--accent); color: #fff; }
+        
+        .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
+        .form-group { display: flex; gap: 1rem; }
+        .form-group input, .form-group textarea { width: 100%; background: var(--bg3); border: 1px solid var(--border); padding: 1rem 1.5rem; border-radius: var(--radius); color: var(--text); font-family: var(--font-body); font-size: 0.95rem; outline: none; transition: border-color 0.2s ease; }
+        .form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+        .form-success { color: #10b981; margin-top: 1rem; font-weight: 600; }
+        .form-error { color: #ef4444; margin-top: 1rem; font-weight: 600; }
+        .mirror { transform: scaleX(-1); }
+
+        @media (max-width: 991px) {
+          .contact-row { flex-direction: column; gap: 3rem; }
+          .form-group { flex-direction: column; }
+        }

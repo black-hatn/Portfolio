@@ -1,0 +1,187 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "toggle_theme_light": "Light mode",
+    "toggle_theme_dark": "Dark mode"
+  },
+  "info": {
+    "title": "Computer Science Student (Year 2)",
+    "age": "20 years old",
+    "nationality": "Chadian",
+    "freelance": "Available (Internship / Projects)",
+    "location": "N'Djamena, Chad",
+    "languages": "French, English, Arabic",
+    "heroLead": "Computer Science Student (Year 2) — web development, cybersecurity and concrete projects.",
+    "about": "I am a computer science student passionate about creating modern, high-performance web applications and cybersecurity. I love solving complex problems and constantly learning new technologies.",
+    "home_paragraphs": [
+      "Cybersecurity is part of my journey: awareness of best practices, curiosity for analysis and monitoring. This site brings together my profile, my skills and projects that I am proud to present.",
+      "I am open to discussions about an internship, a student project or a collaboration — browse the 'About', 'Portfolio' and 'Contact' pages to learn more."
+    ],
+    "highlights": {
+      "dev": "Front & back (React, PHP, JS)",
+      "cyber": "Cybersecurity & Ethical Hacking",
+      "projects": "Web projects & database"
+    }
+  },
+  "hero": {
+    "iam": "I am ",
+    "roles": ["Web Developer", "Cybersecurity Enthusiast", "Computer Science Student"],
+    "cta": "About Me"
+  },
+  "about": {
+    "title": "ABOUT ",
+    "me": "ME",
+    "watermark": "presentation",
+    "intro": "This page gathers my personal information, technical skills and educational background.",
+    "personal_info": "Personal information",
+    "f_name": "First Name",
+    "l_name": "Last Name",
+    "age_label": "Age",
+    "nationality_label": "Nationality",
+    "freelance_label": "Availability",
+    "address_label": "Address",
+    "phone_label": "Phone",
+    "email_label": "Email",
+    "lang_label": "Languages",
+    "cv_btn": "Download my CV",
+    "stats": {
+      "years": "Years of higher education",
+      "projects": "Projects completed",
+      "certs": "Certifications",
+      "motivation": "Motivation"
+    }
+  },
+  "cyber": {
+    "title": "Cybersecurity Focus",
+    "certs_title": "Certifications",
+    "lab_status": "Lab Status",
+    "note": "Constantly monitoring for new vulnerabilities (CVE) and attack techniques.",
+    "badges": {
+      "networking": "Networking",
+      "linux": "Linux",
+      "web_hacking": "Web Hacking",
+      "osint": "OSINT"
+    }
+  },
+  "skills": {
+    "title": "My skills",
+    "levels": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Databases",
+      "cyber": "Cybersecurity",
+      "tools": "Git & Tools",
+      "php": "PHP / Web",
+      "python": "Python",
+      "linux": "Linux"
+    },
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "databases": "Databases",
+      "tools": "Tools & DevOps",
+      "cyber": "Cybersecurity"
+    }
+  },
+  "portfolio": {
+    "title": "MY ",
+    "work": "PORTFOLIO",
+    "watermark": "achievements",
+    "intro": "Projects realized: web applications, exercises and recent achievements.",
+    "projects": {
+      "sportmates": {
+        "title": "Sportmates",
+        "desc": "Sports community platform with admin dashboard (user management, posts and real-time statistics).",
+        "overlay": "SPORTS COMMUNITY",
+        "cat": "Web"
+      },
+      "ecommerce": {
+        "title": "E-commerce Project",
+        "desc": "Online sales web application with cart, authentication and payment. Project realized in a team of 3 people.",
+        "overlay": "E-COMMERCE",
+        "cat": "Web"
+      },
+      "weather": {
+        "title": "Weather App",
+        "desc": "Weather app using OpenWeatherMap API with geolocation and 7-day forecast.",
+        "overlay": "API & JS",
+        "cat": "Web"
+      },
+      "todo": {
+        "title": "Task Manager",
+        "desc": "Task management application with drag & drop, categories and local synchronization.",
+        "overlay": "REACT",
+        "cat": "Web"
+      },
+      "sort": {
+        "title": "Sorting Algorithms",
+        "desc": "Sorting algorithm visualizer (bubble sort, quicksort, merge sort) with animations.",
+        "overlay": "ALGORITHM",
+        "cat": "Tools"
+      }
+    }
+  },
+  "timeline": {
+    "title": "EDUCATION & ",
+    "exp": "EXPERIENCE",
+    "watermark": "journey",
+    "items": {
+      "l2": {
+        "title": "Computer Science Bachelor (Year 2)",
+        "place": "ENASTIC N'Djamena",
+        "desc": "In-depth study of software development, networks and security."
+      },
+      "cyber_f": {
+        "title": "Cybersecurity Training",
+        "place": "Mahrasoft Innovation",
+        "desc": "Introduction to offensive and defensive security fundamentals."
+      },
+      "web_f": {
+        "title": "Web Development Training",
+        "place": "Mahrasoft Innovation",
+        "desc": "Web projects and front/back best practices."
+      },
+      "l1": {
+        "title": "Computer Science Bachelor (Year 1)",
+        "place": "ENASTIC N'Djamena",
+        "desc": "Fundamentals of programming and systems."
+      },
+      "bac": {
+        "title": "Scientific Baccalaureate",
+        "place": "Lycée Les Faucons",
+        "desc": ""
+      }
+    }
+  },
+  "contact": {
+    "title": "GET IN ",
+    "touch": "TOUCH",
+    "watermark": "contact",
+    "intro": "For an internship, a project or a question — leave me a message.",
+    "sub": "Don't be shy!",
+    "lead": "Feel free to reach out. I am open to discussing projects, ideas, or internship and collaboration opportunities.",
+    "email_me": "Email me",
+    "call_me": "Call me",
+    "form": {
+      "name": "YOUR NAME",
+      "email": "YOUR EMAIL",
+      "subject": "THE SUBJECT",
+      "message": "YOUR MESSAGE",
+      "send": "Send",
+      "sending": "Sending...",
+      "success": "Message sent. Thank you!",
+      "error": "Failed to send. Please try again later."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  },
+  "notfound": {
+    "title": "Page Not Found",
+    "desc": "The page you are looking for does not exist or has been moved.",
+    "back": "Back to Home"
+  }
+}
