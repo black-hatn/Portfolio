@@ -83,27 +83,26 @@ export const info = {
 
 ## 🌐 Déploiement
 
-### Render (Recommandé - Gratuit)
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/black-hatn/Portfolio)
+### Vercel (Recommandé - Gratuit & Rapide)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/black-hatn/Portfolio)
 
-**Manuellement:**
-1. Créez un compte sur [render.com](https://render.com)
-2. Connectez votre repo GitHub
-3. Sélectionnez **Static Site**
-4. Configurez :
-   - **Build Command:** `npm install && npm run build`
-   - **Publish Directory:** `dist`
-5. Ajoutez la variable d'environnement `VITE_SITE_URL` avec votre URL Render
-6. Cliquez **Create Static Site**
-
-**Avec Blueprint (Infrastructure as Code):**
-Le fichier `render.yaml` est déjà configuré. Render détectera automatiquement la configuration.
-
-### Vercel
+**Via CLI:**
 ```bash
 npm i -g vercel
+vercel
+# Puis pour la production:
 vercel --prod
 ```
+
+**Configuration automatique:**
+- Build Command: `npm run build` (auto-détecté)
+- Output Directory: `dist` (auto-détecté)
+- Framework: Vite (auto-détecté)
+
+### Render (Alternative)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/black-hatn/Portfolio)
+
+Configuration: Build Command `npm install && npm run build`, Publish Directory `dist`
 
 ### Manuel
 1. `npm run build`
