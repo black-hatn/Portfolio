@@ -1,6 +1,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
+  /* Colors */
   --accent: #3b82f6;
   --accent-hover: #2563eb;
   --bg: #0a0a0a;
@@ -12,12 +13,33 @@
   --muted: #888888;
   --muted2: #a8a8a8;
   --nav-pill: #1e1e1e;
+  
+  /* Typography */
   --font-display: "Outfit", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
-  --radius: 5px;
-  --radius-pill: 30px;
+  
+  /* 8px Grid System */
+  --space-1: 0.5rem;   /* 8px */
+  --space-2: 1rem;     /* 16px */
+  --space-3: 1.5rem;   /* 24px */
+  --space-4: 2rem;     /* 32px */
+  --space-5: 2.5rem;   /* 40px */
+  --space-6: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+  --space-10: 5rem;    /* 80px */
+  --space-12: 6rem;    /* 96px */
+  --space-16: 8rem;    /* 128px */
+  
+  /* Radius */
+  --radius: 0.5rem;      /* 8px */
+  --radius-sm: 0.25rem;  /* 4px */
+  --radius-md: 0.5rem;   /* 8px */
+  --radius-lg: 1rem;     /* 16px */
+  --radius-pill: 9999px;
+  
+  /* Layout */
   --max: 1140px;
-  --header-pad-y: 5rem;
+  --header-pad-y: var(--space-10);
 }
 
 [data-theme="light"] {

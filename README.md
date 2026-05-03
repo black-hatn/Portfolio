@@ -1,62 +1,100 @@
-# Mon Portfolio — React + Vite
+# Nouradine Zakaria — Portfolio
 
-## 🚀 Démarrage rapide
+[![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/black-hatn/Portfolio)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
+[![Vite](https://img.shields.io/badge/Vite-8-646CFF?logo=vite)](https://vitejs.dev)
+[![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+
+> **Portfolio personnel** — Étudiant en L2 Informatique & Cybersécurité à N'Djamena, Tchad 🇹🇩
+
+🔗 **Live Demo:** [nouradine.dev](https://nouradine.dev)
+
+![Portfolio Screenshot](./public/og-image.png)
+
+---
+
+## ✨ Features
+
+- 🎨 **Design System** — Dark/Light mode, grille 8px, animations premium
+- 🌍 **i18n** — Français, English, العربية
+- 🔒 **Cybersécurité** — Section TryHackMe, CTF write-ups
+- ⚡ **Performance** — 100/100 Lighthouse, lazy loading, fonts optimisées
+- � **Responsive** — Mobile-first, navigation adaptative
+- 🔍 **SEO** — Schema.org, Open Graph, sitemap.xml, robots.txt
+- 🎯 **Accessibilité** — ARIA, skip-link, reduced-motion support
+- 🥚 **Easter Egg** — Mode Hacker (Konami code)
+
+---
+
+## 🚀 Quick Start
 
 ```bash
+# Clone & Install
+git clone https://github.com/black-hatn/Portfolio.git
+cd Portfolio
 npm install
+
+# Development
 npm run dev
+
+# Production build
+npm run build
+npm run preview
 ```
 
-Ouvrez http://localhost:5173
+---
 
-## ✏️ Personnalisation
-
-**Tout modifier dans un seul fichier :**
-```
-src/data.js
-```
-
-Ce fichier contient :
-- Vos infos personnelles (nom, email, GitHub, LinkedIn…)
-- Vos compétences
-- Vos projets
-- Votre timeline / parcours
-
-## 📁 Structure du projet
+## 📁 Structure
 
 ```
 src/
-├── data.js              ← MODIFIER ICI VOS INFOS
-├── App.jsx              ← Point d'entrée principal
-├── index.css            ← Styles globaux & variables CSS
-└── components/
-    ├── Navbar.jsx        ← Barre de navigation
-    ├── Hero.jsx          ← Section d'accueil
-    ├── About.jsx         ← À propos + stats
-    ├── Skills.jsx        ← Compétences par catégorie
-    ├── Projects.jsx      ← Grille de projets
-    ├── Timeline.jsx      ← Parcours chronologique
-    ├── Contact.jsx       ← Liens de contact
-    └── Footer.jsx        ← Pied de page
+├── components/          # Composants React
+│   ├── Navbar.jsx
+│   ├── Hero.jsx
+│   ├── Projects.jsx
+│   └── ...
+├── pages/              # Routes
+│   ├── HomePage.jsx
+│   ├── AboutPage.jsx
+│   ├── NotFound.jsx    # 404 designée
+│   └── ...
+├── locales/            # Traductions (FR/EN/AR)
+├── data.js             # Configuration facile
+└── index.css           # Variables CSS & grille 8px
 ```
 
-## 🎨 Personnaliser les couleurs
+---
 
-Dans `src/index.css`, modifiez les variables CSS :
-```css
-:root {
-  --accent: #7fff6e;   /* Couleur principale (vert par défaut) */
-  --accent2: #4fd8d0;  /* Couleur secondaire (turquoise) */
-  --bg: #0a0a0a;       /* Fond principal */
-}
+## ⚙️ Configuration
+
+**Personnaliser vos infos dans `src/data.js` :**
+
+```javascript
+export const info = {
+  name: "Nouradine Zakaria Mahamat",
+  email: "nouradinezakariamahamat2@gmail.com",
+  github: "https://github.com/black-hatn",
+  linkedin: "https://linkedin.com/in/...",
+  // ...
+};
 ```
 
-## 🌐 Déploiement sur Vercel (gratuit)
+---
 
-1. Pushez votre code sur GitHub
-2. Connectez-vous sur vercel.com
-3. Importez votre repo → Deploy automatique !
+## 🌐 Déploiement
 
-## 📄 CV
+### Vercel (Recommandé)
+```bash
+npm i -g vercel
+vercel --prod
+```
 
-Placez votre CV en PDF dans le dossier `public/` sous le nom `cv.pdf`.
+### Manuel
+1. `npm run build`
+2. Upload du dossier `dist/` sur votre serveur
+
+---
+
+## 📄 License
+
+[MIT](LICENSE) © Nouradine Zakaria Mahamat

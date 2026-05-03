@@ -7,6 +7,8 @@ import Footer from "./components/Footer";
 import Spinner from "./components/Spinner";
 import CustomCursor from "./components/CustomCursor";
 import AnimatedPage from "./components/AnimatedPage";
+import ScrollProgress from "./components/ScrollProgress";
+import KonamiCode from "./components/KonamiCode";
 import HomePage from "./pages/HomePage";
 
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -43,6 +45,8 @@ export default function App() {
 
   return (
     <>
+      <KonamiCode />
+      <ScrollProgress />
       <CustomCursor theme={theme} />
       <a
         href="#main-content"

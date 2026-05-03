@@ -1,13 +1,24 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { info } from "../data";
+import Toast from "./Toast";
 
 import "./Contact.css";
 
 export default function Contact() {
   const { t, i18n } = useTranslation();
   const [status, setStatus] = useState(null);
+  const [toast, setToast] = useState({ isVisible: false, message: "" });
   const isRtl = i18n.dir() === "rtl";
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(info.email);
+      setToast({ isVisible: true, message: "Email copié !" });
+    } catch (err) {
+      setToast({ isVisible: true, message: "Impossible de copier" });
+    }
+  };
 
   const formEndpoint = (import.meta.env.VITE_CONTACT_FORM_URL || "").trim();
 
@@ -70,6 +81,14 @@ export default function Contact() {
                 <div className="txt">
                   <span>{t("contact.email_me")}</span>
                   <strong>{info.email}</strong>
+                  <button 
+                    className="copy-btn" 
+                    onClick={copyEmail}
+                    title="Copier l'email"
+                    aria-label="Copier l'email"
+                  >
+                    <i className="bi bi-clipboard" />
+                  </button>
                 </div>
               </li>
               <li>
@@ -120,7 +139,33 @@ export default function Contact() {
         </div>
       </div>
       
+      <Toast 
+        message={toast.message} 
+        isVisible={toast.isVisible} 
+        onClose={() => setToast({ ...toast, isVisible: false })} 
+      />
       
+      <style>{`
+        .copy-btn {
+          margin-left: 8px;
+          background: none;
+          border: none;
+          color: var(--muted);
+          cursor: pointer;
+          font-size: 0.9rem;
+          padding: 4px;
+          border-radius: 4px;
+          transition: color 0.2s, background 0.2s;
+        }
+        .copy-btn:hover {
+          color: var(--accent);
+          background: var(--bg3);
+        }
+        [dir="rtl"] .copy-btn {
+          margin-left: 0;
+          margin-right: 8px;
+        }
+      `}</style>
     </section>
   );
 }
