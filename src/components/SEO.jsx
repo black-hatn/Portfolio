@@ -1,6 +1,9 @@
 import { Helmet } from "react-helmet-async";
 
-const siteUrl = import.meta.env.VITE_SITE_URL || "https://nouradine.dev";
+// Support Render, Vercel, Netlify, et local
+const siteUrl = import.meta.env.VITE_SITE_URL 
+  || (typeof window !== 'undefined' && window.location?.origin)
+  || "https://nouradine.dev";
 
 export default function SEO({ 
   title, 
